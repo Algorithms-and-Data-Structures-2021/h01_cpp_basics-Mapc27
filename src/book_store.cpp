@@ -12,7 +12,7 @@ ResizeStorageStatus resize_storage(Book *&storage, int size, int new_capacity) {
     if (size < 0) return ResizeStorageStatus::NEGATIVE_SIZE;
 
     Book *new_storage = new Book[new_capacity];
-    std::copy(storage, storage+size - 1 , new_storage);
+    std::copy(storage, storage+size, new_storage);
     delete [] storage;
     storage = new_storage;
   // Tip 1: проведите валидацию аргументов функции
