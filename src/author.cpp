@@ -12,7 +12,10 @@ Author::Author(const std::string &full_name, int age, Sex sex) {
   if (full_name.empty()) {
     throw std::invalid_argument("Author::full_name must not be empty");
   }
-  // Tip 1: инициализируйте поля
+  SetAge(age);
+  SetSex(sex);
+  SetFullName(full_name);
+
 }
 
 void Author::SetAge(int age) {

@@ -23,14 +23,21 @@ Book::Book(const std::string &title,
     throw std::invalid_argument("Book::authors cannot be empty");
   }
 
-  // Tip 1: остались слезы на щеках, осталось лишь инициализировать поля ...
+  SetContent(content);
+  SetTitle(title);
+  SetGenre(genre);
+  SetPublisher(publisher);
+  authors_ = authors;
 }
 
 // 2. реализуйте метод ...
 bool Book::AddAuthor(const Author &author) {
-  // здесь мог бы быть ваш сногсшибающий код ...
+  for(Author i: authors_){
+      if(i == author) return false;
+  }
+  authors_.push_back(author);
   // Tip 1: для поиска дубликатов можно использовать цикл for-each
-  return false;
+  return true;
 }
 
 // РЕАЛИЗОВАНО
